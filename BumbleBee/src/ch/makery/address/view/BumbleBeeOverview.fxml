@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.BumbleBeeOverviewController">
+   <children>
+      <Button fx:id="up" layoutX="519.0" layoutY="36.0" mnemonicParsing="false" onMousePressed="#up" onMouseReleased="#stop" onTouchPressed="#up" onTouchReleased="#stop" onTouchStationary="#up" prefHeight="127.0" prefWidth="162.0" text="UP" />
+      <Button fx:id="down" layoutX="519.0" layoutY="504.0" mnemonicParsing="false" onMousePressed="#down" onMouseReleased="#stop" onTouchPressed="#down" onTouchReleased="#stop" onTouchStationary="#down" prefHeight="127.0" prefWidth="162.0" text="DOWN" />
+      <Button fx:id="left" layoutX="251.0" layoutY="274.0" mnemonicParsing="false" onAction="#left" onMousePressed="#left" onMouseReleased="#stop" onTouchPressed="#left" onTouchReleased="#stop" onTouchStationary="#left" prefHeight="127.0" prefWidth="162.0" text="LEFT" />
+      <Button fx:id="right" layoutX="811.0" layoutY="274.0" mnemonicParsing="false" onMousePressed="#right" onMouseReleased="#right" onTouchPressed="#right" onTouchReleased="#stop" onTouchStationary="#right" prefHeight="127.0" prefWidth="162.0" text="RIGHT" />
+      <ToggleButton fx:id="tgKeyboard" layoutX="516.0" layoutY="318.0" mnemonicParsing="false" onAction="#keyboard" text="Activate Keyboard" />
+   </children>
+</AnchorPane>
