@@ -16,6 +16,7 @@ public class MainApp extends Application {
 
 	private Stage primaryStage;
 	private BorderPane rootLayout;
+	private Writer w;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -47,14 +48,24 @@ public class MainApp extends Application {
 				@Override
 				public void handle(KeyEvent event) {
 					switch (event.getCode()) {
-					case W: System.out.println("UP");
-							break;
-					case S: System.out.println("DOWN");
-							break;
-					case A: System.out.println("LEFT");
-							break;
-					case D: System.out.println("RIGHT");
-							break;
+					case W:
+						System.out.println("UP");
+						w = new Writer("Wifi_output.txt", "Up");
+						break;
+					case S:
+						System.out.println("DOWN");
+						w = new Writer("Wifi_output.txt", "Down");
+						break;
+					case A:
+						System.out.println("LEFT");
+						w = new Writer("Wifi_output.txt", "Left");
+						break;
+					case D:
+						System.out.println("RIGHT");
+						w = new Writer("Wifi_output.txt", "Right");
+						break;
+					default:
+						break;
 
 					}
 
@@ -66,6 +77,7 @@ public class MainApp extends Application {
 				@Override
 				public void handle(KeyEvent event) {
 					System.out.println("STOP");
+					w = new Writer("Wifi_output.txt", "Stop");
 				}
 
 			});
