@@ -1,5 +1,6 @@
 package ch.makery.address;
 
+import java.io.File;
 import java.io.IOException;
 
 import ch.makery.address.view.BumbleBeeOverviewController;
@@ -41,6 +42,11 @@ public class MainApp extends Application {
 
 			// Show the scene containing the root layout.
 			Scene scene = new Scene(rootLayout);
+			
+			File f = new File("DarkTheme.css");
+			scene.getStylesheets().clear();
+			scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+			
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {

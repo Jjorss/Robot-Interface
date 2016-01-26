@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import ch.makery.address.MainApp;
+import ch.makery.address.Writer;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,10 +29,7 @@ public class BumbleBeeOverviewController {
 	@FXML
 	private Button right;
 	
-	@FXML
-	private ToggleButton tgKeyboard;
-
-	private Boolean running = true;
+	private Writer w;
 
 	// Reference to the main application.
 	private MainApp mainApp;
@@ -63,35 +61,70 @@ public class BumbleBeeOverviewController {
 
 	public void up() {
 		up.setFocusTraversable(false);
+		w = new Writer("Wifi_output.txt", "Up");
+		up.requestFocus();
 		System.out.println("UP");
 		
 	}
 
 	public void down() {
 		down.setFocusTraversable(false);
+		w = new Writer("Wifi_output.txt", "Down");
+		down.requestFocus();
 		System.out.println("DOWN");
 	}
 
 	public void left() {
 		left.setFocusTraversable(false);
 		System.out.println("LEFT");
+		w = new Writer("Wifi_output.txt", "Left");
+		left.requestFocus();
 	}
 
 	public void right() {
 		right.setFocusTraversable(false);
+		w = new Writer("Wifi_output.txt", "Right");
 		System.out.println("RIGHT");
+		right.requestFocus();
 	}
 
 	public void stop() {
 		System.out.println("STOP");
-		running = false;
+		w = new Writer("Wifi_output.txt", "Stop");
+		
+	}
+
+	public Button getUp() {
+		return up;
+	}
+
+	public void setUp(Button up) {
+		this.up = up;
+	}
+
+	public Button getDown() {
+		return down;
+	}
+
+	public void setDown(Button down) {
+		this.down = down;
+	}
+
+	public Button getLeft() {
+		return left;
+	}
+
+	public void setLeft(Button left) {
+		this.left = left;
+	}
+
+	public Button getRight() {
+		return right;
+	}
+
+	public void setRight(Button right) {
+		this.right = right;
 	}
 	
-	public void keyboard() {
-		tgKeyboard.setFocusTraversable(true);
-		if(tgKeyboard.isSelected()) {
-			
-		}
-	}
 
 }
